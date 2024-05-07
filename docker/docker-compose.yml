@@ -20,9 +20,9 @@ services:
     environment:
       - JUPYTER_ENABLE_LAB=yes
     ports:
-      - 8889:8888
-      - 8001:8000
-      - 8081:8080
+      - 8888:8888
+      - 8000:8000
+      - 8080:8080
   db_mysql_8:
     image: mysql:8
     restart: always
@@ -33,11 +33,11 @@ services:
       MYSQL_USER: teamkimuser
       MYSQL_PASSWORD: teamkimuser
     ports:
-      - "3308:3306"  
+      - "3306:3306"  
     volumes:
       - ./init_mysql.sql:/docker-entrypoint-initdb.d/init_mysql.sql        
   db_mongodb_7:
     image: mongo:7
     restart: always
     ports:
-      - 27018:27017      
+      - 27017:27017      
