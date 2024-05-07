@@ -29,7 +29,7 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: teamkim
       MYSQL_LOWER_CASE_TABLE_NAMES: 1      
-      MYSQL_DATABASE: rarefiled
+      MYSQL_DATABASE: rarefield
       MYSQL_USER: teamkimuser
       MYSQL_PASSWORD: teamkimuser
     ports:
