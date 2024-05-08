@@ -67,6 +67,47 @@ outside_docker:~$ wget http://localhost:8080
 ```
 
 ### setup https certification and start nginx in GCP
+<details>
+
+<summary>sudo nano /etc/nginx/sites-available/default</summary>
+
+server {
+    listen 80;
+    server_name rare-field.shop www.rare-field.shop;
+#    return 301 https://$server_name$request_uri; # Redirect all HTTP requests to HTTPS
+    location / {
+        proxy_pass http://localhost:8000; # Forward all requests to localhost:8000
+        proxy_set_header Host $host; # Pass the current host and port
+        proxy_set_header X-Real-IP $remote_addr; # Pass the client's real IP
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for; # Pass the real user IP read by the proxy or load balancer
+        proxy_set_header X-Forwarded-Proto $scheme; # The protocol being used (http or https)
+    }
+}
+
+server {
+    # SSL configuration
+    listen 443 ssl;
+    server_name rare-field.shop www.rare-field.shop;
+
+    ssl_certificate /etc/letsencrypt/live/rare-field.shop/fullchain.pem; # Certificate path
+    ssl_certificate_key /etc/letsencrypt/live/rare-field.shop/privkey.pem; # Key path
+
+    ssl_session_cache shared:SSL:1m;
+    ssl_session_timeout 10m;
+    ssl_ciphers HIGH:!aNULL:!MD5;
+    ssl_prefer_server_ciphers on;
+
+    location / {
+        proxy_pass http://localhost:8080; # Forward requests to the WAS running in Docker
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+}
+
+</details>
+
 ```
 ~$ sudo certbot --nginx -d rare-field.shop -d www.rare-field.shop
 ~$ sudo rm /etc/nginx/sites-available/default
