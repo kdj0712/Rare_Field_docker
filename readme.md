@@ -121,3 +121,10 @@ outside_docker:~$ wget http://localhost:8080
 @ http://www.rare-field.shop:80/
 @ http://rare-field.shop:80/
 ```
+
+
+### Restart docker
+```
+~# sudo docker stop [Container_ID or Name]
+~# sudo docker start [Container_ID or Name]
+```
