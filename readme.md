@@ -1,4 +1,4 @@
-## Clouds‐GCP
+## GCP( Google-Clouds‐Platform )
 
 ### create vm instance and than connect SSH in GCP
 ```
