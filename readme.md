@@ -60,7 +60,7 @@ spring.datasource.url=jdbc:mysql://rare_field_db_mysql_8_1:3306/rarefield
 remote.server.url=http://rare-field.shop:80/       
 root.file.folder=/apps/fastapis/data/img   
 
-/apps/springboots# chmod +x ./gradlew && nohup ./gradlew bootRun 
+/apps/springboots# chmod +x ./gradlew && nohup ./gradlew bootRun &
 /apps/springboots# exit
 
 outside_docker:~$ wget http://localhost:8080
