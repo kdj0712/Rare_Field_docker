@@ -125,6 +125,6 @@ outside_docker:~$ wget http://localhost:8080
 
 ### Restart docker
 ```
-~# sudo docker stop [Container_ID or Name]
-~# sudo docker start [Container_ID or Name]
+~# sudo docker stop rare_field_springboot_3.1.1_fastapi_1
+~# sudo docker start  rare_field_springboot_3.1.1_fastapi_1
 ```
