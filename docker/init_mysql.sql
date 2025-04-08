@@ -7,44 +7,44 @@ USE rarefield;
 -- Create a new table
 
 CREATE TABLE `user_member` (
-	`user_ID`	varChar(50)	NOT NULL,
-	`user_pswd`	varChar(255)	NULL,
-	`user_email`	varChar(255)	NULL,
-	`user_name`	varChar(255)	NULL,
-	`user_phone`	varChar(255)	NULL,
-	`user_birth`	varChar(255)	NULL,
-	`user_postcode`	varChar(255)	NULL,
-	`user_address`	varChar(255)	NULL,
-	`user_detailed_address`	varChar(255)	NULL,
-	`user_sex`	varChar(255)	NULL,
-	`path_select`	varChar(255)	NULL,
-	`user_who`	varChar(255)	NULL,
-	`ralated_diseases`	varChar(255)	NULL,
-	`hope_info`	varChar(255)	NULL,
-	`user_info_aggree`	varChar(255)	NULL,
-	`user_auth`	varChar(255)	NULL
+	`user_ID`	VARCHAR(50)	NOT NULL,
+	`user_pswd`	VARCHAR(255)	NULL,
+	`user_email`	VARCHAR(255)	NULL,
+	`user_name`	VARCHAR(255)	NULL,
+	`user_phone`	VARCHAR(255)	NULL,
+	`user_birth`	VARCHAR(255)	NULL,
+	`user_postcode`	VARCHAR(255)	NULL,
+	`user_address`	VARCHAR(255)	NULL,
+	`user_detailed_address`	VARCHAR(255)	NULL,
+	`user_sex`	VARCHAR(255)	NULL,
+	`path_select`	VARCHAR(255)	NULL,
+	`user_who`	VARCHAR(255)	NULL,
+	`related_diseases`	VARCHAR(255)	NULL,
+	`hope_info`	VARCHAR(255)	NULL,
+	`user_info_agree`	VARCHAR(255)	NULL,
+	`user_auth`	VARCHAR(255)	NULL
 );
 
 CREATE TABLE `other_QnA` (
-	`ques_ID`	varChar(50)	NOT NULL,
-	`user_ID`	varChar(50)	NOT NULL,
-	`ques_title`	varChar(255)	NULL,
-	`ques_content`	varChar(255)	NULL,
-	`ques_time`	varChar(255)	NULL,
-	`ques_answer`	varChar(255)	NULL,
-	`ques_answer_date`	varChar(255)	NULL,
-	`ques_answer_comment`	varChar(255)	NOT NULL
+	`ques_ID`	VARCHAR(50)	NOT NULL,
+	`user_ID`	VARCHAR(50)	NOT NULL,
+	`ques_title`	VARCHAR(255)	NULL,
+	`ques_content`	VARCHAR(255)	NULL,
+	`ques_time`	VARCHAR(255)	NULL,
+	`ques_answer`	VARCHAR(255)	NULL,
+	`ques_answer_date`	VARCHAR(255)	NULL,
+	`ques_answer_comment`	VARCHAR(255)	NOT NULL
 );
 
 CREATE TABLE `empo_community` (
-	`community_ID`	varChar(50)	NOT NULL,
-	`user_ID`	varChar(50)	NOT NULL,
-	`community_choice`	varChar(255)	NULL,
-	`community_subject`	varChar(255)	NULL,
-	`community_title`	varChar(255)	NULL,
-	`community_content`	varChar(255)	NULL,
-	`community_date`	varChar(255)	NULL,
-	`community_comment`	varChar(255)	NOT NULL
+	`community_ID`	VARCHAR(50)	NOT NULL,
+	`user_ID`	VARCHAR(50)	NOT NULL,
+	`community_choice`	VARCHAR(255)	NULL,
+	`community_subject`	VARCHAR(255)	NULL,
+	`community_title`	VARCHAR(255)	NULL,
+	`community_content`	VARCHAR(255)	NULL,
+	`community_date`	VARCHAR(255)	NULL,
+	`community_comment`	VARCHAR(255)	NOT NULL
 );
 
 CREATE TABLE `trend_news` (
@@ -87,24 +87,24 @@ CREATE TABLE `TREND_SITE` (
 );
 
 CREATE TABLE `info_rare_disease` (
-	`dise_ID`	varChar(50)	NOT NULL,
-	`dise_name_kr`	varChar(255)	NULL,
-	`dise_name_en`	varChar(255)	NULL,
-	`dise_KCD_code`	varChar(255)	NULL,
-	`dise_spc_code`	varChar(255)	NULL,
-	`dise_group`	varChar(255)	NULL,
-	`dise_support`	varChar(255)	NULL,
-	`dise_url`	varChar(255)	NULL
+	`dise_ID`	VARCHAR(50)	NOT NULL,
+	`dise_name_kr`	VARCHAR(255)	NULL,
+	`dise_name_en`	VARCHAR(255)	NULL,
+	`dise_KCD_code`	VARCHAR(255)	NULL,
+	`dise_spc_code`	VARCHAR(255)	NULL,
+	`dise_group`	VARCHAR(255)	NULL,
+	`dise_support`	VARCHAR(255)	NULL,
+	`dise_url`	VARCHAR(255)	NULL
 );
 
 CREATE TABLE `institution` (
-	`hospital_ykiho`	VARCHAR(100)	NOT NULL,
+	`hospital_ykiho`	VARCHAR(255)	NOT NULL,
 	`hospital_yadmNm`	VARCHAR(255)	NULL,
 	`hospital_addr`	VARCHAR(400)	NULL,
 	`hospital_telno`	VARCHAR(50)	NULL
 );
 
-CREATE TABLE `info_academininfo_ENG` (
+CREATE TABLE `info_academicinfo_ENG` (
 	`ObjectID`	VARCHAR(50)	NOT NULL,
 	`TITLE`	VARCHAR(255)	NULL,
 	`ARTICLA_DATE`	VARCHAR(255)	NULL,
@@ -113,7 +113,7 @@ CREATE TABLE `info_academininfo_ENG` (
 );
 
 CREATE TABLE `MANAG_PROGRAM_LIST` (
-	`ObjectID`	VARCHAR(50)	NOT NULL,
+	`ObjectID`	VARCHAR(255)	NOT NULL,
 	`program_title`	VARCHAR(255)	NULL,
 	`program_startdate`	DATETIME	NULL,
 	`program_enddate`	DATETIME	NULL,
@@ -123,22 +123,22 @@ CREATE TABLE `MANAG_PROGRAM_LIST` (
 );
 
 CREATE TABLE `user_pro_mapping` (
-	`user_ID`	VARCHAR(255)	NOT NULL,
+	`user_ID`	VARCHAR(50)	NOT NULL,
 	`ObjectID`	VARCHAR(255)	NOT NULL,
 	`user_pro_wish`	VARCHAR(255)	NULL,
 	`Field2`	VARCHAR(255)	NULL
 );
 
 CREATE TABLE `user_inst_mapping` (
-	`user_ID`	VARCHAR(255)	NOT NULL,
+	`user_ID`	VARCHAR(50)	NOT NULL,
 	`ObjectID`	VARCHAR(255)	NOT NULL,
 	`user_inst_wish`	VARCHAR(255)	NULL
 );
 
 CREATE TABLE `user_dise_mapping` (
-	`user_ID`	varChar(50)	NOT NULL,
-	`dise_ID`	varChar(50)	NOT NULL,
-	`user_dise_wish`	varChar(255)	NULL
+	`user_ID`	VARCHAR(50)	NOT NULL,
+	`dise_ID`	VARCHAR(50)	NOT NULL,
+	`user_dise_wish`	VARCHAR(255)	NULL
 );
 
 CREATE TABLE `AUTH_NAMES` (
@@ -148,10 +148,10 @@ CREATE TABLE `AUTH_NAMES` (
 
 CREATE TABLE `AUTHS` (
 	`UNIQUE_ID`	VARCHAR(200)	NOT NULL,
-	`user_ID`	varChar(50)	NOT NULL
+	`user_ID`	VARCHAR(50)	NOT NULL
 );
 
-CREATE TABLE `CopyOfinfo_academininfo_RISS` (
+CREATE TABLE `CopyOfinfo_academicinfo_RISS` (
 	`ObjectID`	VARCHAR(50)	NOT NULL,
 	`RESEARCH_TITLE`	VARCHAR(255)	NULL,
 	`RESEARCH_URL`	VARCHAR(255)	NULL,
@@ -211,7 +211,7 @@ ALTER TABLE `institution` ADD CONSTRAINT `PK_INSTITUTION` PRIMARY KEY (
 	`hospital_ykiho`
 );
 
-ALTER TABLE `info_academininfo_ENG` ADD CONSTRAINT `PK_INFO_ACADEMININFO_ENG` PRIMARY KEY (
+ALTER TABLE `info_academicinfo_ENG` ADD CONSTRAINT `PK_INFO_ACADEMICINFO_ENG` PRIMARY KEY (
 	`ObjectID`
 );
 
@@ -243,7 +243,7 @@ ALTER TABLE `AUTHS` ADD CONSTRAINT `PK_AUTHS` PRIMARY KEY (
 	`user_ID`
 );
 
-ALTER TABLE `CopyOfinfo_academininfo_RISS` ADD CONSTRAINT `PK_COPYOFINFO_ACADEMININFO_RISS` PRIMARY KEY (
+ALTER TABLE `CopyOfinfo_academicinfo_RISS` ADD CONSTRAINT `PK_COPYOFINFO_ACADEMICINFO_RISS` PRIMARY KEY (
 	`ObjectID`
 );
 
